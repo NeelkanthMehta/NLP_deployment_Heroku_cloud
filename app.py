@@ -24,9 +24,9 @@ def predict():
 
         message = request.form['message']
         vectorized = cv.transform([message]).toarray()
-        y_predict = classifier.predict(vectorized)
+        my_prediction = classifier.predict(vectorized)
 
-    return render_template('result.html', prediction=y_predict)
+    return render_template('result.html', prediction=my_prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
